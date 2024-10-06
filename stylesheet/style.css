@@ -1,0 +1,171 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: linear-gradient(45deg, #62008bd6, #8b0000d6);
+}
+
+.phone {
+    position: relative;
+    width: 270px;
+    height: 520px;
+    background: rgb(185, 185, 185, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.phone::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgb(185, 185, 185, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    top: 10px;
+}
+
+.phone::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(185, 185, 185, 0.1);
+    /* backdrop-filter: blur(5px); */
+    border-radius: 15px;
+}
+
+.phone .light {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: greenyellow;
+    border-radius: 10px;
+    top: 12px;
+    right: 15%;
+    animation: light 5s linear infinite;
+    box-shadow: 0px 0px 10px greenyellow, 0px 0px 20px greenyellow;
+}
+
+.phone .glass {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgb(185, 185, 185, 0.1);
+    border-radius: 50%;
+    top: 60px;
+    overflow: hidden;
+}
+
+.phone .glass::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(185, 185, 185, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    clip-path: circle(50%);
+    top: 60%;
+}
+
+.phone .glass::before {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    background: rgb(185, 185, 185, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    clip-path: circle(50%);
+    top: 12%;
+    left: 30%;
+}
+
+.phone h3 {
+    position: absolute;
+    color: rgb(185, 185, 185, 0.6);
+    font-weight: bold;
+    top: 145px;
+}
+
+.phone .icon {
+    position: absolute;
+    /* border: 1px solid red; */
+    width: 150px;
+    top: 78%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.phone span {
+    background: rgb(185, 185, 185, 0.1);
+    padding: 10px;
+    border-radius: 50%;
+    color: green;
+    animation: call 1s linear infinite;
+}
+
+.phone span:nth-child(2) {
+    color: red;
+}
+
+.phone h4 {
+    position: absolute;
+    color: rgb(185, 185, 185, 0.6);
+    bottom: 7%;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+}
+
+.phone .gif {
+    width: 100%;
+    height: 50;
+    padding-bottom: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+@keyframes call {
+    0% {
+        transform: rotate(135deg);
+    }
+    20% {
+        transform: rotate(150deg);
+    }
+    40% {
+        transform: rotate(120deg);
+    }
+    60% {
+        transform: rotate(150deg);
+    }
+    80% {
+        transform: rotate(120deg);
+    }
+    100% {
+        transform: rotate(135deg);
+    }
+}
+
+@keyframes light {
+    0% {
+        filter: hue-rotate(0deg)
+    }
+    100% {
+        filter: hue-rotate(360deg)
+    }
+}
